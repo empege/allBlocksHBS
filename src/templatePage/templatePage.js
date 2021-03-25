@@ -95,6 +95,7 @@ const sliderMHData2 = {
   ]
 }
 
+const Handlebars = require("handlebars");
 
 const renderAccordion = (rootElement, data, theme = 'accordion--theme--primary') => {
   const template = Handlebars.templates.accordion; // . || ['']

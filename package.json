@@ -1,0 +1,12 @@
+{
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.14",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-useref": "^5.0.0",
+    "handlebars": "^4.7.7",
+    "handlebars-loader": "^1.7.1",
+    "path": "^0.12.7"
+  }
+}
