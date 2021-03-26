@@ -1,5 +1,3 @@
-@import '../variables';
-
 // Accordion Variables
 $accordion-item-gap: 15px;
 $accordion-content-max-height: 200px;
@@ -56,19 +54,19 @@ $border-radius: 5px;
 }
 
 // Ovo mora da se resi bolje nekako...?
-@media screen and (max-width: $break-m) {
-  $accordion-content-max-height: 400px;
-  .accordion {
-    &__header--active +  &__content {
-      max-height: $accordion-content-max-height;
-    }
-  }
-}
-@media screen and (max-width: $break-s) {
-  $accordion-content-max-height: 600px;
-  .accordion {
-    &__header--active +  &__content {
-      max-height: $accordion-content-max-height;
-    }
-  }
-}
+// @media screen and (max-width: $break-m) {
+//   $accordion-content-max-height: 400px;
+//   .accordion {
+//     &__header--active +  &__content {
+//       max-height: $accordion-content-max-height;
+//     }
+//   }
+// }
+// @media screen and (max-width: $break-s) {
+//   $accordion-content-max-height: 600px;
+//   .accordion {
+//     &__header--active +  &__content {
+//       max-height: $accordion-content-max-height;
+//     }
+//   }
+// }

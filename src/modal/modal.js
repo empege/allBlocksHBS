@@ -1,25 +1,29 @@
-const modal = {};
-modal.selectors = {
-  modal: '.js-modal',
-  exitBtn: '.js-modal-exit-btn',
-  modalBackground: '.js-modal-background',
-}
+$(document).ready(function () {
 
-// Elements
-const exitBtn = document.querySelector(modal.selectors.exitBtn);
-const modalBackground = document.querySelector(modal.selectors.modalBackground);
+  const modal = {};
+  modal.selectors = {
+    modal: '.js-modal',
+    exitBtn: '.js-modal-exit-btn',
+    modalBackground: '.js-modal-background',
+  }
 
-// Event Listeners
-exitBtn.addEventListener('click', (e) => exitModal(e));
-modalBackground.addEventListener('click', (e) => exitModal(e));
+  // Elements
+  const exitBtn = document.querySelector(modal.selectors.exitBtn);
+  const modalBackground = document.querySelector(modal.selectors.modalBackground);
 
-// Functions
-const removeClassByPrefix = (prefix) => {
+  // Event Listeners
+  exitBtn.addEventListener('click', (e) => exitModal(e));
+  modalBackground.addEventListener('click', (e) => exitModal(e));
 
-}
-const exitModal = (e) => {
-  const modal = e.target.closest('.modal');
-  // Remove class with prefix 'modal--active--'
-  const regex = new RegExp('\\bmodal--active--\\w*\\b', 'gi');
-  modal.className = modal.className.replace(regex, '');
-}
+  // Functions
+  const removeClassByPrefix = (prefix) => {
+
+  }
+  const exitModal = (e) => {
+    const modal = e.target.closest('.modal');
+    // Remove class with prefix 'modal--active--'
+    const regex = new RegExp('\\bmodal--active--\\w*\\b', 'gi');
+    modal.className = modal.className.replace(regex, '');
+  }
+
+});

@@ -1,24 +1,7 @@
-* {box-sizing: border-box;}
-
 // Sizes
 $vps-s: 16px;
 $vps-m: 20px;
 $vps-l: 24px;
-
-// Mixins
-@mixin positionCenter($position){
-  position: $position;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-@mixin modalFixedPosition($position){
-  position: $position;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
 
 // Colors
 $color-transparent: transparent;
@@ -40,6 +23,7 @@ $color-dark-text-primary: #F44336;
 $color-dark-text-secondary: whitesmoke;
 
 .modal {
+  box-sizing: border-box;
   display: none;
   opacity: 0;
   z-index: 10;
@@ -53,6 +37,9 @@ $color-dark-text-secondary: whitesmoke;
     width: 90%;
     border-radius: 5px;
     border: 2px solid $color-transparent;
+    @include mq-phone-up {
+      width: 500px;
+    }
   }
   &__header {
     display: flex;
@@ -104,14 +91,6 @@ $color-dark-text-secondary: whitesmoke;
 }
 @keyframes slidein {
   100% {top: 50%; opacity: 1;}
-}
-
-@media screen and (min-width: $break-s){
-  .modal {
-    &__inner {
-      width: 500px;
-    }
-  }
 }
 
 // Themes

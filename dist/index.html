@@ -12,25 +12,13 @@
   <script src="handlebars-v4.7.6.js"></script>
   <!-- Ovi moraju da se pokrenu ovde, da li postoji mogucnost da ih stavim u isti fajl kao scripts dole ili mora ovako u dva odvojena - jedan za head jedan za body? Ako ove dole stavim u head i stavim defer, isto ne radi -->
   <!-- Da li ceo ovaj handlebars-v4 isto da stavim u ovaj bundle, valjda je bolje ako se i on minifikuje? -->
-  <!--build:js main.min.handlebars-templates.js -->
-  <script src="src/templatePage/templatePage.precompiled.js"></script>
-  <script src="src/accordion/accordion.precompiled.js"></script>
-  <script src="src/sidebar/sidebar.precompiled.js"></script>
-  <script src="src/modal/modal.precompiled.js"></script>
-  <script src="src/slidermh/slidermh.precompiled.js"></script>
-  <!-- endbuild -->
+  <script src="main.min.handlebars-templates.js"></script>
 </head>
 
 <body>
   <div id="root"></div>
 
-  <!--build:js main.min.js -->
-  <script src="index.js"></script>
-  <script src="./src/accordion/accordion.js"></script>
-  <script src="./src/sidebar/sidebar.js"></script>
-  <script src="./src/modal/modal.js"></script>
-  <script src="./src/slidermh/slidermh.js"></script>
-  <!-- endbuild -->
+  <script src="main.min.js"></script>
 </body>
 
 </html>

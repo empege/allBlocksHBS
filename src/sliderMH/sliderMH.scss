@@ -1,4 +1,4 @@
-@font-face { font-family: Gotham; src: url('GothamLight.ttf'); }
+@font-face { font-family: Gotham; src: url('fonts/GothamLight.ttf'); }
 // Variables
 $main-color: #4a4a4a;
 $sliderMH-width-full: 100%; // iz nekog razloga deljenje sa % radi samo kad delim variablu, ne 100% / 2 npr.
@@ -19,6 +19,13 @@ $sliderMH-width-full: 100%; // iz nekog razloga deljenje sa % radi samo kad deli
   overflow-x: hidden;
   overflow-y: visible;
   touch-action: none;
+  @include mq-tablet-down {
+    width: $sliderMH-width-full;
+    &:hover .slider__image {
+      transition: none;
+      transform: none;
+    }
+  }
   & a {
     text-decoration: none;
     color: $main-color;
@@ -36,6 +43,9 @@ $sliderMH-width-full: 100%; // iz nekog razloga deljenje sa % radi samo kad deli
     outline: none;
     z-index: 5;
     cursor: pointer;
+    @include mq-tablet-down {
+      display: none;
+    }
   }
   &__arrow--left {
     left: 10%;
@@ -59,6 +69,9 @@ $sliderMH-width-full: 100%; // iz nekog razloga deljenje sa % radi samo kad deli
     &:hover .read-more {
       text-decoration: underline;
     }
+    @include mq-tablet-down {
+      min-width: $sliderMH-width-full / 1.25;
+    }
   }
   &__slide:not(.slider__slide--current){
     cursor: default;
@@ -68,6 +81,13 @@ $sliderMH-width-full: 100%; // iz nekog razloga deljenje sa % radi samo kad deli
     opacity: 0;
     margin-top: 40px;
     transition: all 0.4s;
+    @include mq-tablet-down {
+      visibility: none;
+      opacity: 0;
+      margin-top: 20px;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
   }
   &__title {
     font-size: 26px;
@@ -76,6 +96,9 @@ $sliderMH-width-full: 100%; // iz nekog razloga deljenje sa % radi samo kad deli
     font-size: 16px;
     margin: 30px 0 0;
     line-height: 24px;
+    @include mq-tablet-down {
+      margin: 20px 0 0;
+    }
   }
   &__action-btn {
     margin: 30px 0 0;
@@ -105,47 +128,47 @@ $sliderMH-width-full: 100%; // iz nekog razloga deljenje sa % radi samo kad deli
 }
 
 // Media Queries
-@media only screen and (max-width: 767px) {
-  .slider {
-    width: $sliderMH-width-full;
-    &__slide {
-      min-width: $sliderMH-width-full / 1.25;
-    }
-    &__arrow {
-      display: none;
-    }
-    &__content {
-      visibility: none;
-      opacity: 0;
-      margin-top: 20px;
-      margin-left: -20px;
-      margin-right: -20px;
-    }
-    &__description {
-      margin: 20px 0 0;
-    }
-    &:hover .slider__image {
-      transition: none;
-      transform: none;
-    }
-  }
-}
-
-// Should come from general?
-// .read-more {
-//   color: #00732d;
-//   font-size: 18px;
-//   line-height: 26px;
-//   font-weight: bold;
-//   line-height: 26px;
-//   &:after {
-//     content: '';
-//     display: inline-block;
-//     position: relative;
-//     right: -10px;
-//     bottom: -3px;
-//     height: 22px;
-//     width: 13px;
-//     background: url('arrow-right-green-big.svg') no-repeat;
+// @media only screen and (max-width: 767px) {
+//   .slider {
+//     width: $sliderMH-width-full;
+//     &__slide {
+//       min-width: $sliderMH-width-full / 1.25;
+//     }
+//     &__arrow {
+//       display: none;
+//     }
+//     &__content {
+//       visibility: none;
+//       opacity: 0;
+//       margin-top: 20px;
+//       margin-left: -20px;
+//       margin-right: -20px;
+//     }
+//     &__description {
+//       margin: 20px 0 0;
+//     }
+//     &:hover .slider__image {
+//       transition: none;
+//       transform: none;
+//     }
 //   }
 // }
+
+// General?
+.read-more {
+  color: #00732d;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  line-height: 26px;
+  &:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    right: -10px;
+    bottom: -3px;
+    height: 22px;
+    width: 13px;
+    background: url('images/arrow-right-green-big.svg') no-repeat;
+  }
+}
